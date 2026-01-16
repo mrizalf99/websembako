@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Sembako Berkah</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding-bottom: 140px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #2e7d32, #66bb6a);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* GRID PRODUK */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* HP: 2 produk */
+        gap: 15px;
+        padding: 15px;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+      }
+
+      .product {
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .discount {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: red;
+        color: white;
+        font-size: 12px;
+        padding: 3px 6px;
+        border-radius: 4px;
+      }
+
+      .product img {
+        width: 100%;
+        height: 120px;
+        object-fit: contain;
+      }
+
+      .old-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 12px;
+      }
+
+      .new-price {
+        font-weight: bold;
+        color: #2e7d32;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 6px;
+        padding: 8px;
+        background: #25d366;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+
+      /* FLOATING CART */
+      .cart {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        z-index: 1000;
+      }
+
+      .cart h3 {
+        margin: 5px 0;
+      }
+
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+      }
+
+      .total {
+        font-weight: bold;
+        margin-top: 5px;
+        color: #2e7d32;
+      }
+
+      /* FORM */
+      .form-group {
+        margin-top: 5px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 6px;
+        margin-top: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h2>🛒 Toko Sembako Berkah</h2>
+      <p>Belanja Mudah • Checkout WhatsApp</p>
+    </header>
+
+    <div class="container">
+      <div class="product">
+        <div class="discount">15%</div>
+        <img src="https://via.placeholder.com/200?text=Beras" />
+        <h4>Beras 5 Kg</h4>
+        <div class="old-price">Rp 75.000</div>
+        <div class="new-price">Rp 65.000</div>
+        <button onclick="tambahKeranjang('Beras 5 Kg', 65000)">Tambah</button>
+      </div>
+
+      <div class="product">
+        <div class="discount">20%</div>
+        <img src="https://via.placeholder.com/200?text=Minyak" />
+        <h4>Minyak Goreng 1 L</h4>
+        <div class="old-price">Rp 19.000</div>
+        <div class="new-price">Rp 15.000</div>
+        <button onclick="tambahKeranjang('Minyak Goreng 1 L', 15000)">Tambah</button>
+      </div>
+
+      <div class="product">
+        <div class="discount">12%</div>
+        <img src="https://via.placeholder.com/200?text=Gula" />
+        <h4>Gula Pasir 1 Kg</h4>
+        <div class="old-price">Rp 16.000</div>
+        <div class="new-price">Rp 14.000</div>
+        <button onclick="tambahKeranjang('Gula Pasir 1 Kg', 14000)">Tambah</button>
+      </div>
+    </div>
+
+    <!-- FLOATING CART -->
+    <div class="cart">
+      <h3>Keranjang</h3>
+
+      <div class="form-group">
+        <input id="nama" placeholder="Nama Pembeli" />
+      </div>
+
+      <div class="form-group">
+        <input id="alamat" placeholder="Alamat Pengiriman" />
+      </div>
+
+      <div class="form-group">
+        <select id="pembayaran">
+          <option value="">Metode Pembayaran</option>
+          <option>Transfer Bank</option>
+          <option>COD</option>
+          <option>QRIS</option>
+        </select>
+      </div>
+
+      <div id="cartItems"></div>
+      <div class="total" id="totalHarga">Total: Rp 0</div>
+
+      <button onclick="checkoutWA()">Checkout WhatsApp</button>
+    </div>
+
+    <script>
+      let keranjang = {};
+
+      function tambahKeranjang(nama, harga) {
+        keranjang[nama] = keranjang[nama] ? { harga, qty: keranjang[nama].qty + 1 } : { harga, qty: 1 };
+        renderKeranjang();
+      }
+
+      function renderKeranjang() {
+        let html = "";
+        let total = 0;
+
+        for (let item in keranjang) {
+          let sub = keranjang[item].harga * keranjang[item].qty;
+          total += sub;
+          html += `<div class="cart-item">
+            <span>${item} x ${keranjang[item].qty}</span>
+            <span>Rp ${sub.toLocaleString()}</span>
+        </div>`;
+        }
+
+        document.getElementById("cartItems").innerHTML = html || "Keranjang kosong";
+        document.getElementById("totalHarga").innerText = "Total: Rp " + total.toLocaleString();
+      }
+
+      function checkoutWA() {
+        let nama = document.getElementById("nama").value;
+        let alamat = document.getElementById("alamat").value;
+        let bayar = document.getElementById("pembayaran").value;
+
+        if (!nama || !alamat || !bayar) {
+          alert("Lengkapi data pembeli!");
+          return;
+        }
+
+        let pesan = `NOTA PEMESANAN
+Toko Sembako Berkah
+------------------------
+Nama   : ${nama}
+Alamat : ${alamat}
+Bayar  : ${bayar}
+
+Pesanan:
+`;
+
+        let total = 0;
+        for (let item in keranjang) {
+          let sub = keranjang[item].harga * keranjang[item].qty;
+          total += sub;
+          pesan += `- ${item} x ${keranjang[item].qty} = Rp ${sub.toLocaleString()}\n`;
+        }
+
+        pesan += `
+------------------------
+Total: Rp ${total.toLocaleString()}
+
+Terima kasih.`;
+
+        window.open("https://wa.me/628154068582?text=" + encodeURIComponent(pesan), "_blank");
+      }
+    </script>
+  </body>
+</html>
