@@ -10,7 +10,7 @@
         margin: 0;
         font-family: Arial, sans-serif;
         background: #f4f4f4;
-        padding-bottom: 220px; /* ruang aman untuk floating cart */
+        padding-bottom: 230px;
       }
 
       /* HEADER */
@@ -21,26 +21,25 @@
         text-align: center;
       }
 
-      /* PRODUK */
-      .container {
+      /* PRODUK GRID */
+      .product-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* HP: 2 kolom */
         gap: 15px;
         padding: 15px;
       }
 
-      @media (min-width: 768px) {
-        .container {
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        }
+      .product {
+        background: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        position: relative;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
-      .product {
-        background: white;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        position: relative;
+      .product img {
+        width: 100%;
+        border-radius: 8px;
       }
 
       .discount {
@@ -48,22 +47,32 @@
         top: 8px;
         left: 8px;
         background: red;
-        color: white;
+        color: #fff;
         font-size: 12px;
         padding: 3px 6px;
-        border-radius: 4px;
+        border-radius: 5px;
+      }
+
+      .add-btn {
+        width: 100%;
+        margin-top: 8px;
+        padding: 8px;
+        border: none;
+        background: #2ecc71;
+        color: #fff;
+        border-radius: 6px;
       }
 
       .product img {
         width: 100%;
-        height: 120px;
+        height: 130px;
         object-fit: contain;
       }
 
       .old-price {
+        font-size: 12px;
         text-decoration: line-through;
         color: #999;
-        font-size: 12px;
       }
 
       .new-price {
@@ -71,114 +80,98 @@
         color: #2e7d32;
       }
 
+      .stock {
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      select {
+        width: 100%;
+        padding: 6px;
+        border-radius: 6px;
+        margin-bottom: 6px;
+      }
+
       button {
-        padding: 8px;
         border: none;
         border-radius: 6px;
-        font-weight: bold;
         cursor: pointer;
+        font-weight: bold;
       }
 
       .add-btn {
         width: 100%;
         background: #25d366;
         color: white;
-        margin-top: 8px;
+        padding: 8px;
+        margin-top: 6px;
       }
 
-      /* FORM CHECKOUT */
+      .add-btn:disabled {
+        background: #aaa;
+      }
+
+      /* CHECKOUT */
       .checkout-form {
         background: white;
         margin: 20px;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .form-group {
-        margin-bottom: 12px;
       }
 
       label {
         font-size: 13px;
         font-weight: bold;
-        margin-bottom: 4px;
-        display: block;
       }
 
       input,
       textarea,
       select {
         width: 100%;
-        padding: 9px;
-        font-size: 14px;
+        padding: 8px;
         border-radius: 6px;
         border: 1px solid #ccc;
       }
 
-      /* FLOATING CART */
-      .cart-items-wrapper {
-        max-height: 130px; /* ± tinggi 4 item */
-        overflow-y: auto;
-        padding-right: 4px;
-      }
-
-      /* Scrollbar lebih halus (opsional, tapi cakep) */
-      .cart-items-wrapper::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      .cart-items-wrapper::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 10px;
-      }
-
+      /* CART */
       .cart {
         position: fixed;
-        bottom: env(safe-area-inset-bottom);
+        bottom: 0;
         left: 0;
         right: 0;
         background: white;
-        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
         padding: 10px;
-        z-index: 1000;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .cart-items-wrapper {
+        max-height: 140px;
+        overflow-y: auto;
       }
 
       .cart-item {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         font-size: 13px;
         margin-bottom: 6px;
       }
 
-      .cart-left {
-        flex: 1;
-      }
-
-      .cart-controls {
-        display: flex;
-        align-items: center;
-        gap: 5px;
+      .cart-controls button {
+        padding: 3px 6px;
       }
 
       .qty-btn {
         background: #ddd;
-        padding: 4px 8px;
-        border-radius: 4px;
       }
 
       .delete-btn {
         background: red;
         color: white;
-        padding: 4px 8px;
-        border-radius: 4px;
       }
 
       .total {
         font-weight: bold;
         color: #2e7d32;
-        margin: 6px 0;
       }
     </style>
   </head>
@@ -186,199 +179,108 @@
   <body>
     <header>
       <h2>🛒 Toko Sembako Arkana</h2>
-      <p>Pilih Produk • Checkout via WhatsApp • Mudah dan Cepat</p>
+      <p>Pilih Produk • Checkout • WhatsApp</p>
     </header>
 
-    <!-- PRODUK -->
-    <div class="container">
-      <div class="product">
+    <div class="product-container">
+      <!-- BERAS -->
+      <div class="product" data-product-id="beras-premium">
         <div class="discount">15%</div>
-        <img src="img/sania_sania-beras--5-kg-_full02.jpg" />
-        <h4>Beras 5 Kg</h4>
+
+        <img src="https://via.placeholder.com/200?text=Beras" />
+        <h4>Beras Premium</h4>
+
+        <select class="variant" onchange="updateHarga(this)">
+          <option data-variant="5kg" data-price="75000" data-discount="15" data-stock="10">5 Kg</option>
+
+          <option data-variant="10kg" data-price="140000" data-discount="15" data-stock="5">10 Kg</option>
+        </select>
+
         <div class="old-price">Rp 75.000</div>
         <div class="new-price">Rp 65.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Beras 5 Kg', 65000)">Tambah</button>
+        <div class="stock">Stok: 10</div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
       </div>
 
-      <div class="product">
+      <!-- MINYAK -->
+      <div class="product" data-product-id="minyak-goreng">
         <div class="discount">20%</div>
-        <img src="img/tropical_tropical-minyak-goreng-1-liter-botol_full01.jpg" />
-        <h4>Minyak Goreng 1 L</h4>
-        <div class="old-price">Rp 19.000</div>
+
+        <img src="https://via.placeholder.com/200?text=Minyak" />
+        <h4>Minyak Goreng</h4>
+
+        <select class="variant" onchange="updateHarga(this)">
+          <option data-price="15000" data-stock="20" data-variant="1lt" data-discount="0">1 Liter</option>
+          <option data-price="70000" data-stock="8" data-variant="5lt" data-discount="5">5 Liter</option>
+        </select>
+
         <div class="new-price">Rp 15.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Minyak Gworeng 1 L', 15000)">Tambah</button>
+        <div class="stock">Stok: 20</div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
       </div>
 
+      <!-- GULA -->
       <div class="product">
         <div class="discount">12%</div>
-        <img src="img/unnamed.jpg" />
-        <h4>Gula P1111asir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu32la Paasir 1 Kg', 14000)">Tambah</button>
-      </div>
 
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="img/tropical_tropical-minyak-goreng-1-liter-botol_full01.jpg" />
-        <h4>Gula P1111asir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu3432la Paasir 1 Kg', 14000)">Tambah</button>
-      </div>
-
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="img/9ca527f9711e8bb7fa5b181fc57f9c1c.jpg" />
-        <h4>Gula P1111asir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu43la Paasir 1 Kg', 14000)">Tambah</button>
-      </div>
-
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="img/f475ad1f-c8ca-4dc0-bb3f-dd02ce73004f.jpg" />
-        <h4>Gula P1111asir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu55la Paasir 1 Kg', 14000)">Tambah</button>
-      </div>
-
-      <div class="product">
-        <div class="discount">12%</div>
         <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula P1111asir 1 Kg</h4>
+        <h4>Gula Pasir 1 Kg</h4>
+
         <div class="old-price">Rp 16.000</div>
         <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu66la Paasir 1 Kg', 14000)">Tambah</button>
+
+        <button class="add-btn" onclick="tambahKeranjang('Gula Pasir 1 Kg',14000)">Tambah</button>
       </div>
 
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula P1111asir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu77la Paasir 1 Kg', 14000)">Tambah</button>
-      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="beras-premium2">
+        <div class="discount">15%</div>
 
-      <!-- TAMBAH PRODUK BARU DI SINI -->
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu0la Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
+        <img src="https://via.placeholder.com/200?text=Beras" />
+        <h4>Beras Premium2</h4>
 
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu9la Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
+        <select class="variant" onchange="updateHarga(this)">
+          <option data-variant="5kg" data-price="75000" data-discount="15" data-stock="10">5 Kg</option>
 
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu7la Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
+          <option data-variant="10kg" data-price="140000" data-discount="15" data-stock="5">10 Kg</option>
+        </select>
 
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu1la Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
+        <div class="old-price">Rp 75.000</div>
+        <div class="new-price">Rp 65.000</div>
+        <div class="stock">Stok: 10</div>
 
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gu3la Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
-
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('Gul3a Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
-
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('G2ula Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
-
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('GZula Pas222ir 1 Kg', 14000)">Tambah</button>
-      </div>
-
-      <div class="product">
-        <div class="discount">12%</div>
-        <img src="https://via.placeholder.com/200?text=Gula" />
-        <h4>Gula Pas222ir 1 Kg</h4>
-        <div class="old-price">Rp 16.000</div>
-        <div class="new-price">Rp 14.000</div>
-        <button class="add-btn" onclick="tambahKeranjang('GuCla Pas222ir 1 Kg', 14000)">Tambah</button>
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
       </div>
     </div>
 
-    <!-- FORM -->
+    <!-- CHECKOUT -->
     <div id="checkout" class="checkout-form">
       <h3>🧾 Data Pembeli</h3>
 
-      <div class="form-group">
-        <label>Nama Pembeli</label>
-        <input id="nama" placeholder="Contoh: Rizal Fahlefi" />
-      </div>
+      <label>Nama</label>
+      <input id="nama" />
 
-      <div class="form-group">
-        <label>Alamat Pengiriman</label>
-        <textarea id="alamat" rows="3" placeholder="Jalan, RT/RW, Desa, Kecamatan"></textarea>
-      </div>
+      <label>Alamat</label>
+      <textarea id="alamat"></textarea>
 
-      <div class="form-group">
-        <label>Metode Pembayaran</label>
-        <select id="bayar">
-          <option value="">-- Pilih Metode --</option>
-          <option>COD</option>
-          <option>Transfer Bank</option>
-          <option>QRIS</option>
-        </select>
-      </div>
+      <label>Pembayaran</label>
+      <select id="bayar">
+        <option value="">-- Pilih --</option>
+        <option>COD</option>
+        <option>Transfer</option>
+        <option>QRIS</option>
+      </select>
 
-      <button class="add-btn" onclick="kirimWA()">Kirim Pesanan Sekarang</button>
+      <button class="add-btn" onclick="kirimWA()">Kirim Pesanan</button>
     </div>
 
-    <!-- FLOATING CART -->
+    <!-- CART -->
     <div class="cart">
       <div class="cart-items-wrapper">
         <div id="cartItems">Keranjang kosong</div>
       </div>
-
       <div class="total" id="totalHarga">Total: Rp 0</div>
       <button class="add-btn" onclick="scrollCheckout()">Checkout</button>
     </div>
@@ -386,14 +288,86 @@
     <script>
       let keranjang = {};
 
+      // PRODUK NORMAL
       function tambahKeranjang(nama, harga) {
         keranjang[nama] ? keranjang[nama].qty++ : (keranjang[nama] = { harga, qty: 1 });
         renderKeranjang();
       }
 
-      function ubahQty(nama, delta) {
-        keranjang[nama].qty += delta;
-        if (keranjang[nama].qty <= 0) delete keranjang[nama];
+      // PRODUK VARIAN
+      function updateHarga(select) {
+        const p = select.closest(".product");
+        const opt = select.selectedOptions[0];
+
+        const hargaAsli = Number(opt.dataset.price);
+        const diskon = Number(opt.dataset.discount);
+        const stok = Number(opt.dataset.stock);
+
+        const hargaDiskon = Math.round(hargaAsli - (hargaAsli * diskon) / 100);
+
+        p.querySelector(".old-price").innerText = "Rp " + hargaAsli.toLocaleString();
+
+        p.querySelector(".new-price").innerText = "Rp " + hargaDiskon.toLocaleString();
+
+        p.querySelector(".stock").innerText = "Stok: " + stok;
+
+        p.querySelector(".discount").innerText = diskon + "%";
+      }
+
+      function tambahKeranjangVarian(btn) {
+        const p = btn.closest(".product");
+        const select = p.querySelector(".variant");
+        const opt = select.selectedOptions[0];
+
+        let stok = Number(opt.dataset.stock);
+        if (stok <= 0) {
+          alert("Stok habis!");
+          return;
+        }
+
+        const productId = p.dataset.productId;
+        const variant = opt.dataset.variant;
+        const namaProduk = p.querySelector("h4").innerText;
+
+        const hargaAsli = Number(opt.dataset.price);
+        const diskon = Number(opt.dataset.discount);
+        const harga = Math.round(hargaAsli - (hargaAsli * diskon) / 100);
+
+        const key = `${productId}_${variant}`;
+
+        if (!keranjang[key]) {
+          keranjang[key] = {
+            nama: `${namaProduk} (${variant})`,
+            harga: harga,
+            qty: 1,
+          };
+        } else {
+          keranjang[key].qty++;
+        }
+
+        // Kurangi stok
+        stok--;
+        opt.dataset.stock = stok;
+        p.querySelector(".stock").innerText = "Stok: " + stok;
+
+        renderKeranjang();
+      }
+
+      // Kurangi stok
+      stok--;
+      option.dataset.stock = stok;
+      p.querySelector(".stock").innerText = "Stok: " + stok;
+
+      renderKeranjang();
+
+      function ubahQty(key, delta) {
+        keranjang[key].qty += delta;
+        if (keranjang[key].qty <= 0) delete keranjang[key];
+        renderKeranjang();
+      }
+
+      function hapusItem(key) {
+        delete keranjang[key];
         renderKeranjang();
       }
 
@@ -406,33 +380,32 @@
         let html = "";
         let total = 0;
 
-        for (let item in keranjang) {
-          let sub = keranjang[item].harga * keranjang[item].qty;
+        for (let key in keranjang) {
+          const item = keranjang[key];
+          const sub = item.harga * item.qty;
           total += sub;
 
           html += `
-        <div class="cart-item">
-            <div class="cart-left">
-                ${item}<br>Rp ${sub.toLocaleString()}
-            </div>
-            <div class="cart-controls">
-                <button class="qty-btn" onclick="ubahQty('${item}', -1)">−</button>
-                ${keranjang[item].qty}
-                <button class="qty-btn" onclick="ubahQty('${item}', 1)">+</button>
-                <button class="delete-btn" onclick="hapusItem('${item}')">🗑️</button>
-            </div>
-        </div>`;
+    <div class="cart-item">
+      <div class="cart-left">
+        ${item.nama}<br>Rp ${sub.toLocaleString()}
+      </div>
+      <div class="cart-controls">
+        <button class="qty-btn" onclick="ubahQty('${key}',-1)">−</button>
+        ${item.qty}
+        <button class="qty-btn" onclick="ubahQty('${key}',1)">+</button>
+        <button class="delete-btn" onclick="hapusItem('${key}')">🗑️</button>
+      </div>
+    </div>`;
         }
 
         document.getElementById("cartItems").innerHTML = html || "Keranjang kosong";
+
         document.getElementById("totalHarga").innerText = "Total: Rp " + total.toLocaleString();
       }
 
       function scrollCheckout() {
-        if (Object.keys(keranjang).length === 0) {
-          alert("Keranjang masih kosong!");
-          return;
-        }
+        if (!Object.keys(keranjang).length) return alert("Keranjang kosong!");
         document.getElementById("checkout").scrollIntoView({ behavior: "smooth" });
       }
 
@@ -447,7 +420,7 @@
         }
 
         let pesan = `NOTA PEMESANAN
-Toko Sembako Berkah
+Toko Sembako Arkana
 ------------------------
 Nama   : ${nama}
 Alamat : ${alamat}
