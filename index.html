@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Toko Sembako Berkah</title>
+    <title>Toko Sembako Arkana</title>
 
     <style>
       body {
         margin: 0;
+        overflow-x: hidden;
         font-family: Arial, sans-serif;
         background: #f4f4f4;
         padding-bottom: 230px;
@@ -21,95 +22,101 @@
         text-align: center;
       }
 
-      /* PRODUK GRID */
+      /* GRID PRODUK */
       .product-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-        padding: 12px;
+        grid-template-columns: repeat(2, 1fr); /* HP */
+        gap: 12px;
+        padding: 22px;
       }
-      @media (min-width: 1024px) {
+
+      @media (min-width: 768px) {
         .product-container {
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(4, 1fr); /* Desktop */
         }
       }
 
+      /* CARD PRODUK */
       .product {
-        background: #fff;
-        border-radius: 10px;
-        padding: 10px;
         position: relative;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background: #fff;
+        border-radius: 14px;
+        padding: 22px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       }
 
+      /* GAMBAR PRODUK */
       .product img {
         width: 100%;
-        border-radius: 8px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #f5f5f5;
+        margin-bottom: 8px;
       }
 
+      /* JUDUL */
+      .product h4 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 6px 0;
+        min-height: 36px;
+      }
+
+      /* VARIANT */
+      .variants {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        min-height: 48px;
+        margin-bottom: 6px;
+      }
+
+      /* HARGA */
+      .old-price {
+        font-size: 12px;
+        color: #999;
+        text-decoration: line-through;
+      }
+
+      .new-price {
+        font-size: 14px;
+        font-weight: bold;
+        color: #2e7d32;
+      }
+
+      /* STOK */
+      .stock {
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      /* DISKON BADGE */
       .discount {
         position: absolute;
         top: 8px;
         left: 8px;
         background: red;
         color: #fff;
-        font-size: 12px;
-        padding: 3px 6px;
+        font-size: 11px;
+        padding: 4px 6px;
         border-radius: 5px;
       }
 
-      .add-btn {
-        width: 100%;
-        margin-top: 8px;
-        padding: 8px;
-        border: none;
-        background: #2ecc71;
-        color: #fff;
-        border-radius: 6px;
-      }
-
-      .product img {
-        width: 100%;
-        aspect-ratio: 1 / 1; /* kotak sempurna */
-        object-fit: cover;
-        border-radius: 14px;
-        background: #f5f5f5;
-      }
-
-      @media (max-width: 768px) {
-        .product img {
-          aspect-ratio: 4 / 5; /* lebih tinggi di HP */
-        }
-        @media (min-width: 769px) {
-          .product img {
-            aspect-ratio: 1 / 1;
-          }
-        }
-      }
-
-      .old-price {
-        font-size: 12px;
-        text-decoration: line-through;
-        color: #999;
-      }
-
-      .new-price {
-        font-weight: bold;
-        color: #2e7d32;
-      }
-
-      .stock {
-        font-size: 12px;
-        margin-top: 4px;
-      }
-
+      /* SELECT */
       select {
         width: 100%;
         padding: 6px;
         border-radius: 6px;
         margin-bottom: 6px;
+        border: 1px solid #ddd;
       }
 
+      /* TOMBOL */
       button {
         border: none;
         border-radius: 6px;
@@ -122,7 +129,7 @@
         background: #25d366;
         color: white;
         padding: 8px;
-        margin-top: 6px;
+        margin-top: auto; /* ⬅️ PENTING */
       }
 
       .add-btn:disabled {
@@ -192,46 +199,73 @@
         color: #2e7d32;
       }
 
-      /* ===== WRAPPER SCROLL ===== */
-      .category-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin-bottom: 15px;
-      }
-
-      /* ===== MENU KATEGORI ===== */
-      .category-menu {
+      /* KATEGORI BAR */
+      .category-bar {
         display: flex;
-        gap: 10px;
-        padding: 5px 0;
-        width: max-content;
-      }
-      .category-menu button.active {
-        background: #2e7d32;
-        color: #fff;
+        gap: 8px;
+        padding: 12px;
+        background: #fff;
+        border-radius: 14px;
+        margin: 12px;
+        flex-wrap: nowrap;
       }
 
-      /* ===== BUTTON ===== */
-      .category-menu button {
-        white-space: nowrap;
-        padding: 8px 16px;
+      /* BUTTON */
+      .cat-btn {
+        padding: 8px 14px;
         border-radius: 20px;
         border: none;
-        background: #f1f1f1;
+        background: #e8f5e9;
+        color: #2e7d32;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      /* ACTIVE */
+      .cat-btn.active {
+        background: #2e7d32;
+        color: white;
+      }
+
+      /* DROPDOWN */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 42px;
+        right: 0;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        z-index: 100;
+        min-width: 120px;
+      }
+
+      .dropdown-menu button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: white;
+        text-align: left;
         cursor: pointer;
         font-size: 14px;
-        transition: 0.3s;
       }
 
-      /* ===== HOVER ===== */
-      .category-menu button:hover {
-        background: #2e7d32;
-        color: #fff;
+      .dropdown-menu button:hover {
+        background: #f1f1f1;
       }
 
-      /* ===== HILANGKAN SCROLLBAR (OPSIONAL) ===== */
-      .category-wrapper::-webkit-scrollbar {
-        display: none;
+      /* MOBILE SAFE */
+      @media (max-width: 480px) {
+        .category-bar {
+          justify-content: space-between;
+        }
       }
 
       .pagination {
@@ -258,16 +292,26 @@
       }
 
       .search-box {
-        padding: 10px;
+        display: flex;
+        gap: 8px;
+        padding: 12px;
       }
 
       .search-box input {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
+        flex: 1;
+        padding: 10px;
         border-radius: 10px;
         border: 1px solid #ccc;
-        outline: none;
+        font-size: 14px;
+      }
+
+      .search-box button {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: none;
+        background: #2e7d32;
+        color: white;
+        font-weight: bold;
       }
 
       .variants {
@@ -306,21 +350,32 @@
 
   <body>
     <header>
-      <h2>🛒 Toko Sembako Berkah</h2>
+      <h2>🛒 Toko Sembako Arkana</h2>
       <p>Pilih Produk • Checkout • WhatsApp</p>
     </header>
 
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Cari produk..." onkeyup="searchProduk()" />
+      <input type="search" id="searchInput" placeholder="Cari produk..." inputmode="search" />
+      <button onclick="submitSearch()">Cari</button>
     </div>
 
-    <div class="category-wrapper"></div>
-    <div class="category-menu">
-      <button class="active" onclick="filterKategori('all', this)">Semua</button>
-      <button onclick="filterKategori('beras', this)">Beras</button>
-      <button onclick="filterKategori('minyak', this)">Minyak</button>
-      <button onclick="filterKategori('gula', this)">Gula</button>
-      <button onclick="filterKategori('tepung', this)">Tepung</button>
+    <!-- KATEGORI -->
+    <div class="category-bar">
+      <button class="cat-btn active" data-category="all">Semua</button>
+      <button class="cat-btn" data-category="beras">Beras</button>
+      <button class="cat-btn" data-category="minyak">Minyak</button>
+      <button class="cat-btn" data-category="minyak">Minyak12</button>
+
+      <div class="dropdown">
+        <button class="cat-btn dropdown-btn">Lainnya ▼</button>
+        <div class="dropdown-menu">
+          <button data-category="gula">Gula</button>
+          <button data-category="tepung">Tepung</button>
+          <button data-category="gula">Gula</button>
+          <button data-category="tepung">Tepung</button>
+          <button data-category="tepung">Tepung</button>
+        </div>
+      </div>
     </div>
 
     <div id="productList" class="product-container">
@@ -1331,6 +1386,76 @@
     <script>
       let keranjang = {};
 
+      function submitSearch() {
+        // tutup keyboard HP
+        document.getElementById("searchInput").blur();
+
+        // reset ke halaman 1
+        currentPage = 1;
+
+        // jalankan filter + pagination
+        showPage(1);
+      }
+      document.getElementById("searchInput").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          submitSearch();
+        }
+      });
+
+      // JAVASCRIPT — LOGIKA FILTER PRODUK
+      const catButtons = document.querySelectorAll(".cat-btn");
+      const products = document.querySelectorAll(".product");
+
+      // FILTER PRODUK
+      function filterProduk(kategori) {
+        products.forEach((product) => {
+          const cat = product.dataset.category;
+          product.style.display = kategori === "all" || cat === kategori ? "block" : "none";
+        });
+      }
+
+      // BUTTON KATEGORI UTAMA
+      catButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const kategori = btn.dataset.category;
+          if (!kategori) return;
+
+          catButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          filterProduk(kategori);
+        });
+      });
+
+      // DROPDOWN TOGGLE
+      const dropdownBtn = document.querySelector(".dropdown-btn");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      dropdownBtn.addEventListener("click", () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+      });
+
+      // PILIH KATEGORI DI DROPDOWN
+      dropdownMenu.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const kategori = btn.dataset.category;
+
+          catButtons.forEach((b) => b.classList.remove("active"));
+          dropdownBtn.classList.add("active");
+
+          filterProduk(kategori);
+          dropdownMenu.style.display = "none";
+        });
+      });
+
+      // TUTUP DROPDOWN SAAT KLIK LUAR
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown")) {
+          dropdownMenu.style.display = "none";
+        }
+      });
+
       document.querySelectorAll(".product").forEach((product) => {
         const firstVariant = product.querySelector(".variant-box.active");
         if (firstVariant) {
@@ -1400,18 +1525,6 @@
       function prevPage() {
         showPage(currentPage - 1);
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      /* ===================== FILTER KATEGORI ===================== */
-      function filterKategori(kategori, el) {
-        kategoriAktif = kategori;
-
-        // aktifkan tombol kategori
-        document.querySelectorAll(".category-menu button").forEach((btn) => btn.classList.remove("active"));
-
-        if (el) el.classList.add("active");
-
-        showPage(1);
       }
 
       /* ===================== SEARCH ===================== */
