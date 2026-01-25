@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Toko Sembako Arkana</title>
+    <title>Sembako Arkana</title>
 
     <style>
       body {
@@ -45,7 +45,7 @@
 
         background: #fff;
         border-radius: 14px;
-        padding: 22px;
+        padding: 7px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       }
 
@@ -54,17 +54,17 @@
         width: 100%;
         aspect-ratio: 1 / 1;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: 7px;
         background: #f5f5f5;
-        margin-bottom: 8px;
+        margin-bottom: 3px;
       }
 
       /* JUDUL */
       .product h4 {
         font-size: 14px;
         font-weight: 600;
-        margin: 6px 0;
-        min-height: 36px;
+        margin: 1px 0;
+        min-height: 15px;
       }
 
       /* VARIANT */
@@ -337,20 +337,23 @@
 
       .variant-discount {
         position: absolute;
-        top: -6px;
+        top: -9px;
         right: -6px;
         background: red;
         color: white;
-        font-size: 11px;
-        padding: 2px 6px;
+        font-size: 12px;
+        padding: 2px 3px;
         border-radius: 8px;
+      }
+      .variant-discount:empty {
+        display: none;
       }
     </style>
   </head>
 
   <body>
     <header>
-      <h2>🛒 Toko Sembako Arkana</h2>
+      <h2>🛒 Toko Sembako Berkah</h2>
       <p>Pilih Produk • Checkout • WhatsApp</p>
     </header>
 
@@ -378,7 +381,7 @@
     </div>
 
     <div id="productList" class="product-container">
-      <!-- BERAS -->
+      <!-- BERASsatu1 -->
 
       <div class="product" data-product-id="gula-pasir" data-category="gula">
         <div class="discount"></div>
@@ -387,18 +390,18 @@
         <h4>Gula Pasir</h4>
 
         <div class="variants">
-          <div class="variant-box active" data-variant="0.25kg" data-price="5000" data-discount="10" data-stock="9" onclick="pilihVarian(this)">
+          <div class="variant-box active" data-variant="1/4kg" data-price="4500" data-discount="0" data-stock="25" onclick="pilihVarian(this)">
             <span class="variant-name">1/4 Kg</span>
-            <span class="variant-discount">-10%</span>
+            <span class="variant-discount"></span>
           </div>
 
-          <div class="variant-box" data-variant="0.5kg" data-price="9000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+          <div class="variant-box" data-variant="1/2kg" data-price="8500" data-discount="0" data-stock="25" onclick="pilihVarian(this)">
             <span class="variant-name">1/2 Kg</span>
           </div>
 
-          <div class="variant-box" data-variant="1kg" data-price="18000" data-discount="5" data-stock="3" onclick="pilihVarian(this)">
+          <div class="variant-box" data-variant="1kg" data-price="17000" data-discount="0" data-stock="23" onclick="pilihVarian(this)">
             <span class="variant-name">1 Kg</span>
-            <span class="variant-discount">-5%</span>
+            <span class="variant-discount"></span>
           </div>
         </div>
 
@@ -410,26 +413,1467 @@
         <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
       </div>
 
-      <!-- Tepung -->
-      <div class="product" data-product-id="Tepung Terigu Curah" data-category="tepung">
+      <!-- Tepungdua2 -->
+      <div class="product" data-product-id="tepung-terigu-curah" data-category="tepung">
         <div class="discount"></div>
 
-        <img src="img/gulapasir.jpg" />
+        <img src="img/tepungterigucurah.jpg" />
         <h4>Tepung Terigu Curah</h4>
 
         <div class="variants">
-          <div class="variant-box active" data-variant="0.25kg" data-price="5000" data-discount="10" data-stock="9" onclick="pilihVarian(this)">
+          <div class="variant-box active" data-variant="1/4kg" data-price="2000" data-discount="0" data-stock="23" onclick="pilihVarian(this)">
             <span class="variant-name">1/4 Kg</span>
-            <span class="variant-discount">-10%</span>
+            <span class="variant-discount"></span>
           </div>
 
-          <div class="variant-box" data-variant="0.5kg" data-price="9000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+          <div class="variant-box" data-variant="1/2kg" data-price="4000" data-discount="0" data-stock="20" onclick="pilihVarian(this)">
             <span class="variant-name">1/2 Kg</span>
           </div>
 
-          <div class="variant-box" data-variant="1kg" data-price="18000" data-discount="5" data-stock="3" onclick="pilihVarian(this)">
+          <div class="variant-box" data-variant="1kg" data-price="8000" data-discount="0" data-stock="20" onclick="pilihVarian(this)">
             <span class="variant-name">1 Kg</span>
-            <span class="variant-discount">-5%</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- Produk3 -->
+
+      <div class="product" data-product-id="gula-jawa-asli" data-category="gula">
+        <div class="discount"></div>
+
+        <img src="img/Gula Jawa Asli.jpg" />
+        <h4>Gula Jawa Asli</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="5000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="9000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="18000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- Produk4 -->
+
+      <div class="product" data-product-id="gula-jawa-campuran" data-category="gula">
+        <div class="discount"></div>
+
+        <img src="img/Gula Jawa Campuran.jpeg" />
+        <h4>Gula Jawa Campuran</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="5500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="10000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="20000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="tepung-beras" data-category="tepung">
+        <div class="discount"></div>
+
+        <img src="img/Tepung Beras.jpg" />
+        <h4>Tepung Beras</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/2kg" data-price="7500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="tepung-ketan" data-category="tepung">
+        <div class="discount"></div>
+
+        <img src="img/Tepung Ketan.png" />
+        <h4>Tepung Ketan</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/2kg" data-price="10000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="tepung-tapioka" data-category="tepung">
+        <div class="discount"></div>
+
+        <img src="img/Tepung Tapioka.png" />
+        <h4>Tepung Tapioka</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="2500" data-discount="" data-stock="19" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="4500" data-discount="0" data-stock="15" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="9000" data-discount="" data-stock="13" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="telur-ayam" data-category="telur">
+        <div class="discount"></div>
+
+        <img src="img/Telur Ayam.jpg" />
+        <h4>Telur Ayam</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="7000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="13500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="26500" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="brambang" data-category="brambang">
+        <div class="discount"></div>
+
+        <img src="img/Brambang.jpg" />
+        <h4>Brambang</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="10000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="20000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="39000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="brambang-sinco" data-category="brambang">
+        <div class="discount"></div>
+
+        <img src="img/Brambang Sinco.png" />
+        <h4>Brambang Sinco</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="9000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="18000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="35000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="brambang-kating" data-category="brambang">
+        <div class="discount"></div>
+
+        <img src="img/Brambang Kating.jpg" />
+        <h4>Brambang Kating</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="10000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="19000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="37000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="minyak-curah" data-category="minyak">
+        <div class="discount"></div>
+
+        <img src="img/Minyak Curah.jpeg" />
+        <h4>Minyak Curah</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="5000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="10000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="19500" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="tepung-terigu-segitiga" data-category="tepung">
+        <div class="discount"></div>
+
+        <img src="img/Tepung Terigu Segitiga.jpg" />
+        <h4>Tepung Terigu Segitiga</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/2kg" data-price="12000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="tepung-terigu-tulip" data-category="tepung">
+        <div class="discount"></div>
+
+        <img src="img/Tepung Terigu Tulip.jpg" />
+        <h4>Tepung Terigu Tulip</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="9000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="minyak-rizqi" data-category="minyak">
+        <div class="discount"></div>
+
+        <img src="img/Minyak Rizqi.jpg" />
+        <h4>Minyak Rizqi</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="800ml" data-price="16500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">800ml</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="minyak-hemart" data-category="minyak">
+        <div class="discount"></div>
+
+        <img src="img/Minyak Hemart.png" />
+        <h4>Minyak Hemart</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="900ml" data-price="19000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">900ml</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="minyakita" data-category="minyak">
+        <div class="discount"></div>
+
+        <img src="img/Minyakita.jpg" />
+        <h4>Minyakita</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1000ml" data-price="18000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1000ml</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="minyak-lentera-kita" data-category="minyak">
+        <div class="discount"></div>
+
+        <img src="img/Minyak Lentera Kita.jpg" />
+        <h4>Minyak Lentera Kita</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="750ml" data-price="16000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">750ml</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="teh-tjatoet" data-category="teh">
+        <div class="discount"></div>
+
+        <img src="img/Teh Tjatoet Merah.jpg" />
+        <h4>Teh Tjatoet Merah</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pos" data-price="3500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pos</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1pak" data-price="29500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1pak</span>
+          </div>
+
+          <div class="variant-box" data-variant="2pcs besar" data-price="6500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">2pcs besar</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="teh-tjatoet" data-category="teh">
+        <div class="discount"></div>
+
+        <img src="img/Teh Tjatoet Hijau.png" />
+        <h4>Teh Tjatoet Hijau</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pos" data-price="4000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pos</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1pak" data-price="35500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1pak</span>
+          </div>
+
+          <div class="variant-box" data-variant="2pcs besar" data-price="7500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">2pcs besar</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="roma-kelapa" data-category="roti">
+        <div class="discount"></div>
+
+        <img src="img/Roma Kela[a.png" />
+        <h4>Roma Kelapa</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="9000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="roma-malkist-abon" data-category="roti">
+        <div class="discount"></div>
+
+        <img src="img/roma malkist abon.jpg" />
+        <h4>Roma Malkist Abon</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="8000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="agar-agar" data-category="agar-agar">
+        <div class="discount"></div>
+
+        <img src="img/agar-agar.jpg" />
+        <h4>Agar-agar</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="4000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="mie-kenduri" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/mie kenduri.jpg" />
+        <h4>Mie Kenduri</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="hijau" data-price="13500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">hijau</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="orange" data-price="11500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">orange</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="ekomie" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/ekomie.jpg" />
+        <h4>Ekomie</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="besar" data-price="10000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">besar</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="kecil" data-price="2500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">kecil</span>
+          </div>
+
+          <div class="variant-box" data-variant="3pcs-kecil" data-price="6500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">3pcs-kecil</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="ekomie-bakso" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/ekomie bakso.jpeg" />
+        <h4>Ekomie Bakso</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="besar" data-price="13000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">besar</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="kecil" data-price="10000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">kecil</span>
+          </div>
+
+          <div class="variant-box" data-variant="3pcs-kecil" data-price="5500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">3pcs-kecil</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="bihun-jagung-pion" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/bihun jagung pion.jpg" />
+        <h4>Bihun Jagung Pion</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="6000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="bihun-jagung-tanam" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/bihun jagung tanam.jpg" />
+        <h4>Bihun Jagung Tanam</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="7000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-dangdut-asli" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Dangdunt Asli.jpg" />
+        <h4>Garam Dangdunt Asli</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="18000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-batang-besar" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Dangdunt Batang.jpg" />
+        <h4>Garam Batang Besar</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="14000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-batang-tanggung" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Dangdunt Batang.jpg" />
+        <h4>Garam Batang Tanggung</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="7000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-batang-kecil" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Dangdunt Batang.jpg" />
+        <h4>Garam Batang Kecil</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="5000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-halus-daun" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Halus Daun.jpg" />
+        <h4>Garam Halus Daun</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="2500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-halus-jempol" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Halus Jempol.jpg" />
+        <h4>Garam Halus Jempol</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="2500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-halus-gunung" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Halus Gunung.jpg" />
+        <h4>Garam Halus Gunung</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="2000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="garam-krosok" data-category="garam">
+        <div class="discount"></div>
+
+        <img src="img/Garam Krosok.jpg" />
+        <h4>Garam Krosok</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="4500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="kerupuk-udang-raja" data-category="kerupuk">
+        <div class="discount"></div>
+
+        <img src="img/Kerupuk Udang Raja.jpeg" />
+        <h4>Kerupuk Udang Raja</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="12000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="22000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="43000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="kerupuk-udang-raja-mete" data-category="kerupuk">
+        <div class="discount"></div>
+
+        <img src="img/Kerupuk Udang Raja Mete.jpg" />
+        <h4>Kerupuk Udang Raja Mete</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="13000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="23000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="44000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="soon-gebug" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/Soon Gebug.jpg" />
+        <h4>Soon Gebug</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="3500" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="sagu-mutiara" data-category="sagu">
+        <div class="discount"></div>
+
+        <img src="img/Sagu Mutiara.jpg" />
+        <h4>Sagu Mutiara</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="6000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="11500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="23000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+      <!-- BERAS -->
+      <div class="product" data-product-id="miri" data-category="miri">
+        <div class="discount"></div>
+
+        <img src="img/Miri.jpg" />
+        <h4>Miri</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1ons" data-price="6000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1ons</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/4kg" data-price="14000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="28000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="55000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="merica" data-category="merica">
+        <div class="discount"></div>
+
+        <img src="img/Merica.jpg" />
+        <h4>Merica</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1ons" data-price="18000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1ons</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/4kg" data-price="45000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="90000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="175000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="Tumbar" data-category="tumbar">
+        <div class="discount"></div>
+
+        <img src="img/Tumbar.jpg" />
+        <h4>Tumbar</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1ons" data-price="4000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1ons</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/4kg" data-price="7000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="14000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="32000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="polo" data-category="polo">
+        <div class="discount"></div>
+
+        <img src="img/Polo.png" />
+        <h4>Polo</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1ons" data-price="14000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1ons</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1pcs" data-price="1500" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="kentang" data-category="kentang">
+        <div class="discount"></div>
+
+        <img src="img/Kentang.jpg" />
+        <h4>Kentang</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1kg-besar" data-price="13000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1kg-besar</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg-kecil" data-price="11000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1kg-kecil</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="mie-sedap-ayam-bawang" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/Mie Sedap Ayam Bawang.jpg" />
+        <h4>Mie Sedap Ayam Bawang</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="00" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="5pcs" data-price="00" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">5pcs</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="mie-sedap-soto" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/Mie Sedap Soto.jpg" />
+        <h4>Mie Sedap Soto</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="3000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="5pcs" data-price="15000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">5pcs</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="mie-sedap-goreng" data-category="mie">
+        <div class="discount"></div>
+
+        <img src="img/Mie Sedap Goreng.jpg" />
+        <h4>Mie Sedap Goreneg</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="3000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="5pcs" data-price="15000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">5pcs</span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="beras-super" data-category="beras">
+        <div class="discount"></div>
+
+        <img src="img/Beras Super.jpg" />
+        <h4>Beras Super</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1kg" data-price="16000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="beras-medium" data-category="beras">
+        <div class="discount"></div>
+
+        <img src="img/Beras medium.jpg" />
+        <h4>Beras medium</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1kg" data-price="15000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="beras-submedium" data-category="beras">
+        <div class="discount"></div>
+
+        <img src="img/Beras Submedium.jpg" />
+        <h4>Beras Submedium</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1kg" data-price="14000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="beras-ketan" data-category="beras">
+        <div class="discount"></div>
+
+        <img src="img/Beras Ketan.png" />
+        <h4>Beras Ketan</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1kg" data-price="19000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="emping-mentah" data-category="emping">
+        <div class="discount"></div>
+
+        <img src="img/Emping Mentah.jpg" />
+        <h4>Emping Mentah</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1kg" data-price="75000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="minyak-sanco" data-category="minyak">
+        <div class="discount"></div>
+
+        <img src="img/Minyak Sanco.png" />
+        <h4>Minyak Sanco</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="2000ml" data-price="41000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">2000ml</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="sabun-giv" data-category="sabun">
+        <div class="discount"></div>
+
+        <img src="img/Sabun Giv.jpg" />
+        <h4>Sabun Giv</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="3000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="sabun-sinzui" data-category="sabun">
+        <div class="discount"></div>
+
+        <img src="img/Sabun Sizui.jpg" />
+        <h4>Sabun Sinzui</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1pcs" data-price="5000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1pcs</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="cecek-super" data-category="cecek">
+        <div class="discount"></div>
+
+        <img src="img/ce" />
+        <h4>Cecek Super</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1ons" data-price="6000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1ons</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/4kg" data-price="14000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="28000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="55000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
+
+        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
+      </div>
+
+      <!-- BERAS -->
+      <div class="product" data-product-id="cecek-medium" data-category="cecek">
+        <div class="discount"></div>
+
+        <img src="img/gulapasir.jpg" />
+        <h4>Cecek Medium</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1ons" data-price="6000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1ons</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/4kg" data-price="14000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="28000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="55000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
           </div>
         </div>
 
@@ -446,901 +1890,28 @@
         <div class="discount"></div>
 
         <img src="img/gulapasir.jpg" />
-        <h4>Gula Jawa Campuran</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="5500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="10000" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="20000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 6.500</div>
-        <div class="new-price">Rp 5.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS5 -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Tepung Beras</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.5kg" data-price="7500" data-discount="" data-stock="5">1/2 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 8.500</div>
-        <div class="new-price">Rp 7.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="babi" data-category="babi">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>babi</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
-
-        <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
-      </div>
-      <!-- BERAS -->
-      <div class="product" data-product-id="gula-pasir" data-category="gula">
-        <div class="discount"></div>
-
-        <img src="img/gulapasir.jpg" />
-        <h4>Gula Pasir</h4>
-
-        <select class="variant" onchange="updateHarga(this)">
-          <option data-variant="0.25kg" data-price="4500" data-discount="" data-stock="10">1/4 Kg</option>
-
-          <option data-variant="0.5kg" data-price="8500" data-discount="" data-stock="5">1/2 Kg</option>
-
-          <option data-variant="1kg" data-price="17000" data-discount="" data-stock="5">1 Kg</option>
-        </select>
-
-        <div class="old-price">Rp 5.000</div>
-        <div class="new-price">Rp 4.500</div>
-        <div class="stock">Stok: 10</div>
+        <h4>dan lain-lain</h4>
+
+        <div class="variants">
+          <div class="variant-box active" data-variant="1/4kg" data-price="5000" data-discount="" data-stock="9" onclick="pilihVarian(this)">
+            <span class="variant-name">1/4 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+
+          <div class="variant-box" data-variant="1/2kg" data-price="9000" data-discount="0" data-stock="5" onclick="pilihVarian(this)">
+            <span class="variant-name">1/2 Kg</span>
+          </div>
+
+          <div class="variant-box" data-variant="1kg" data-price="18000" data-discount="" data-stock="3" onclick="pilihVarian(this)">
+            <span class="variant-name">1 Kg</span>
+            <span class="variant-discount"></span>
+          </div>
+        </div>
+
+        <!-- INI WAJIB ADA -->
+        <div class="old-price"></div>
+        <div class="new-price"></div>
+        <div class="stock"></div>
 
         <button class="add-btn" onclick="tambahKeranjangVarian(this)">Tambah</button>
       </div>
@@ -1471,40 +2042,61 @@
 
       /* ===================== FILTER GABUNG (SEARCH + KATEGORI) ===================== */
       function getFilteredProducts() {
-        const keyword = document.getElementById("searchInput")?.value.toLowerCase() || "";
+        const keyword = document.getElementById("searchInput")?.value.trim().toLowerCase() || "";
 
         return allProducts.filter((product) => {
           const nama = product.querySelector("h4").innerText.toLowerCase();
           const kategori = product.dataset.category;
 
-          const cocokSearch = nama.includes(keyword);
+          const cocokSearch = keyword === "" || nama.includes(keyword);
           const cocokKategori = kategoriAktif === "all" || kategori === kategoriAktif;
 
-          // 🔥 LOGIKA BARU (FIX)
-          if (keyword !== "") {
-            // search override kategori
-            return cocokSearch;
-          } else {
-            return cocokSearch && cocokKategori;
-          }
+          // 🔥 SEARCH & KATEGORI JALAN BERSAMA
+          return cocokSearch && cocokKategori;
         });
       }
+
+      function filterKategori(kategori, btn) {
+        kategoriAktif = kategori;
+
+        document.querySelectorAll(".category-menu button").forEach((b) => b.classList.remove("active"));
+
+        if (btn) btn.classList.add("active");
+
+        currentPage = 1;
+        showPage(1);
+      }
+
+      /* =====================================================
+   EVENT BUTTON KATEGORI (FIX UTAMA)
+===================================================== */
+      document.querySelectorAll(".cat-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const kategori = btn.dataset.category;
+          if (!kategori) return;
+
+          filterKategori(kategori, btn);
+        });
+      });
 
       /* ===================== TAMPILKAN HALAMAN ===================== */
       function showPage(page) {
         const filtered = getFilteredProducts();
-        const totalPages = Math.ceil(filtered.length / productsPerPage) || 1;
+        const totalPages = Math.max(1, Math.ceil(filtered.length / productsPerPage));
 
         if (page < 1 || page > totalPages) return;
 
         currentPage = page;
 
-        // sembunyikan semua produk dulu
+        // sembunyikan semua produk
         allProducts.forEach((p) => (p.style.display = "none"));
 
-        // tampilkan sesuai halaman
+        // tampilkan sesuai pagination
         filtered.forEach((product, index) => {
-          if (index >= (page - 1) * productsPerPage && index < page * productsPerPage) {
+          const start = (page - 1) * productsPerPage;
+          const end = page * productsPerPage;
+
+          if (index >= start && index < end) {
             product.style.display = "block";
           }
         });
@@ -1706,7 +2298,7 @@
         }
 
         let pesan = `NOTA PEMESANAN
-Toko Sembako Arkana
+Sembako Arkana
 ------------------------
 Nama   : ${nama}
 Alamat : ${alamat}
@@ -1729,7 +2321,7 @@ Total: Rp ${total.toLocaleString()}
 
 Terima kasih.`;
 
-        window.open("https://wa.me/6281546068582?text=" + encodeURIComponent(pesan), "_blank");
+        window.open("https://wa.me/6289603163740?text=" + encodeURIComponent(pesan), "_blank");
       }
 
       /* ===================== LOAD AWAL ===================== */
